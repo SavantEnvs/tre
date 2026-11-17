@@ -1,0 +1,9 @@
+project: savantenvs/tre
+target: reguexec
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/reguexec/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_reguexec
+    libfuzzer: true
+    timeout: 5

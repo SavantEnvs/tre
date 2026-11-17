@@ -1,0 +1,9 @@
+project: savantenvs/tre
+target: agrep
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/agrep/testsuite
+cmds:
+  - cmd: "/mayhem/agrep-afl -2 -s -n -B --color -d '[.] ' -e '(foo|ba+r){~1}[a-z]+' @@"
+    afl: true
+    timeout: 5
